@@ -15,4 +15,9 @@ public class TestContainersTest {
         assertNotNull(container.getHost());
         System.out.println("Alpine started in host: " + container.getHost());
     }
+    
+    @Test
+    public void anotherTest() {
+        System.out.println("Another test");
+    }
 }
