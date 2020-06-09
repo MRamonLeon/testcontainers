@@ -11,7 +11,7 @@ public class TestContainersTest {
     public GenericContainer container = new GenericContainer<>("alpine:latest");
     
     @Test
-    public void testItWorks() {
+    public void testContainersTest() {
         assertNotNull(container.getHost());
         System.out.println("Alpine started in host: " + container.getHost());
     }
