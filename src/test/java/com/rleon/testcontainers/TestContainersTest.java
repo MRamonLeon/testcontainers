@@ -12,8 +12,9 @@ public class TestContainersTest {
     private final Logger log = Logger.getLogger(TestContainersTest.class.getName());
     
     @Rule
-    public GenericContainer container = new GenericContainer<>("alpine:latest");
-    
+    public GenericContainer container = new GenericContainer<>("alpine:latest")
+            .withFileSystemBind("/var/run/docker.sock", "/var/run/docker.sock");
+     //-v $PWD:$PWD -w $PWD -v /var/run/docker.sock:/var/run/docker.sock
     @Test
     public void testContainersTest() {
         assertNotNull(container.getHost());
