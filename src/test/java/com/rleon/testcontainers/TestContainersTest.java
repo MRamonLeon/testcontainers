@@ -13,7 +13,7 @@ public class TestContainersTest {
     
     @Rule
     public GenericContainer container = new GenericContainer<>("alpine:latest")
-            .withFileSystemBind("/var/run/docker.sock", "/var/run/docker.sock");
+            .withFileSystemBind("/var/run/docker.sock", "/var/run/docker.sock").withEnv("DOCKER_HOST", "tcp://0.0.0.0:2375");
      //-v $PWD:$PWD -w $PWD -v /var/run/docker.sock:/var/run/docker.sock
     @Test
     public void testContainersTest() {
