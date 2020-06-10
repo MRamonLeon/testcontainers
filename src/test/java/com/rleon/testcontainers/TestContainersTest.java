@@ -14,7 +14,6 @@ public class TestContainersTest {
     @Rule
     public GenericContainer container = new GenericContainer<>("alpine:latest")
            .withFileSystemBind("/var/lib/docker", "/var/lib/docker")
-           .withFileSystemBind("/var/run/docker.sock", "/var/run/docker.sock")
            .withPrivilegedMode(true);
     
      //-v $PWD:$PWD -w $PWD -v /var/run/docker.sock:/var/run/docker.sock
