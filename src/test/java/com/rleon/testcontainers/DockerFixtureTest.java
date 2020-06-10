@@ -9,11 +9,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 public class DockerFixtureTest {
-    @Rule
+    //@Rule
     public DockerRule<SquidContainer> rule = new DockerRule<SquidContainer>(SquidContainer.class);
     private SquidContainer container;
     
-    @Test
+    //@Test
     public void dockerContainerTest() throws IOException, InterruptedException {
         container = rule.get();
         System.out.println(new String(Files.readAllBytes(container.getLogfile().toPath()), StandardCharsets.UTF_8));

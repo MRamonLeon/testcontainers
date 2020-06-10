@@ -7,7 +7,7 @@ import org.jenkinsci.utils.process.CommandBuilder;
 
 import java.io.IOException;
 
-@DockerFixture(id = "squid", ports = 3128)
+//@DockerFixture(id = "squid", ports = 3128)
 public class SquidContainer extends DockerContainer {
     
     public String getAccessLog() throws IOException, InterruptedException {

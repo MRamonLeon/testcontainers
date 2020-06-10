@@ -4,20 +4,25 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.testcontainers.containers.GenericContainer;
 
+import java.util.logging.Logger;
+
 import static org.junit.Assert.*;
 
 public class TestContainersTest {
+    private final Logger log = Logger.getLogger(TestContainersTest.class.getName());
+    
     @Rule
     public GenericContainer container = new GenericContainer<>("alpine:latest");
     
     @Test
     public void testContainersTest() {
         assertNotNull(container.getHost());
-        System.out.println("Alpine started in host: " + container.getHost());
+        log.info("Alpine started in host: " + container.getHost());
+        log.info("Logs of squid: \n" + container.getLogs());
     }
     
-    @Test
-    public void anotherTest() {
-        System.out.println("Another test");
-    }
+//    @Test
+//    public void anotherTest() {
+//        System.out.println("Another test");
+//    }
 }
